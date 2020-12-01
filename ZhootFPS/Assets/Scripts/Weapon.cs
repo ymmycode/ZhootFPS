@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
         {
             CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) { return; }
+            if (target == null) { return; } //if the target don't have "enemyhealth", return / do nothing
             target.TakeDamage(weaponDamage);
         }
         else

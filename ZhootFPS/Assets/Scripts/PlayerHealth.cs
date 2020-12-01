@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
         if (playerHealth <= 0)
         {
             print("DED");
+            GetComponent<DeathHandler>().ShowGameOverPanel();
+            //stop control and show game over panel
         }
     }
 }
