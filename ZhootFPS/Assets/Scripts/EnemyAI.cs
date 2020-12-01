@@ -34,6 +34,11 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public void OnDamageTaken()
+    {
+        isProvoked = true;
+    }
+
     private void EngageTarget()
     {
         FacingAtTarget(); //enemy looking toward at the player
@@ -46,7 +51,6 @@ public class EnemyAI : MonoBehaviour
         {
             //close range
             AttackTarget();
-            FacingAtTarget();
         }   
     }
 

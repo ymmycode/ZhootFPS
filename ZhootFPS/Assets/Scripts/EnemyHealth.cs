@@ -8,12 +8,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        this.transform.GetComponent<EnemyAI>().isProvoked = true;
+        BroadcastMessage("OnDamageTaken"); // broadcast message for setting isProvoked to true
+        
         hitPoints -= damage;
         if(hitPoints <= 0)
         {
             Destroy(gameObject);
         }
-        print(hitPoints);
     }
 }
