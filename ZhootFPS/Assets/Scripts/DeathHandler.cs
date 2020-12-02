@@ -22,11 +22,13 @@ public class DeathHandler : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        FindObjectOfType<WeaponSwitcher>().enabled = false;
     }
     private static void UnpauseLockCursor()
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        FindObjectOfType<WeaponSwitcher>().enabled = true;
     }
 }

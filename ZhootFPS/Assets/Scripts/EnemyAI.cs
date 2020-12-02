@@ -49,7 +49,7 @@ public class EnemyAI : MonoBehaviour
 
         if(distanceToTarget <= navMeshAgent.stoppingDistance)
         {
-            //close range
+            //in range
             AttackTarget();
         }   
     }

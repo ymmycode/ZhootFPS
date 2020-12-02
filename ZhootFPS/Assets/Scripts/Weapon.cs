@@ -12,6 +12,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] float fireRate = 10f;
     [SerializeField] float lastFired;
     [SerializeField] GameObject hitVFX;
+    [SerializeField] Ammo ammoSlot; 
+    int weaponMag;
+
     void Update()
     {
         if(Input.GetButton("Fire1"))
@@ -26,8 +29,17 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        PlayMuzzleFlashVFX();
-        ProcessRaycast();
+        weaponMag = ammoSlot.GetCurentAmmoAmount();
+        if(weaponMag != 0)
+        {
+            PlayMuzzleFlashVFX();
+            ProcessRaycast();
+            ammoSlot.ReduceAmmoAmount();
+        }
+        else
+        {
+            Debug.LogWarning("Empty Mag");
+        }
     }
 
     private void PlayMuzzleFlashVFX()
