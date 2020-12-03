@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,7 +50,7 @@ private void ProcessKeyInput()
 
     private void ScrollWheelDown()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             if (currentWeapon <= 0)
             //if at 0 reset to 2
@@ -66,7 +66,7 @@ private void ProcessKeyInput()
 
     private void ScrollWheelUp()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        if(Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             if (currentWeapon >= transform.childCount - 1)
             //if greater thhan max (current is 2) reset to 0
@@ -98,5 +98,5 @@ private void ProcessKeyInput()
         }
     }
 
-
+    
 }

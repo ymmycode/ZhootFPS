@@ -17,7 +17,6 @@ public class EnemyAttack : MonoBehaviour
     public void AttackHitEvent()
     {
         if (target == null) return;
-        Debug.Log("RAWR");
         target.GetComponent<PlayerHealth>().TakePlayerHealth(damage);
     }
 }

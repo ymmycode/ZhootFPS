@@ -184,6 +184,7 @@ MonoBehaviour:
   lastFired: 0
   hitVFX: {fileID: 2005722643347270936, guid: 7aa67f27cf5ddf04792ea4d30143dd60, type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 1
 --- !u!114 &6087689634466109737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
+  FPController: {fileID: 0}
   zoomInFOV: 40
   zoomOutFOV: 60
   zoomInSensivity: 0.8

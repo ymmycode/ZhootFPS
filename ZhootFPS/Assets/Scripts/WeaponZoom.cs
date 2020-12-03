@@ -100,5 +100,9 @@ public class WeaponZoom : MonoBehaviour
         FPController.mouseLook.XSensitivity = zoomInSensivity;
         FPController.mouseLook.YSensitivity = zoomInSensivity;
     }
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
 
 }
