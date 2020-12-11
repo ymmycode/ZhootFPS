@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 2062911176}
   - component: {fileID: 2062911180}
   - component: {fileID: 2062060979}
+  - component: {fileID: 726545394235061320}
   - component: {fileID: 7359484145119313668}
   m_Layer: 0
   m_Name: RigidBodyFPSController
@@ -381,6 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 100
   damageFeedback: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &2062911180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,6 +415,25 @@ MonoBehaviour:
     ammoAmount: 100
   - ammoType: 2
     ammoAmount: 20
+--- !u!114 &726545394235061320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f685147d9ab7743ab83a59de1083b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys:
+  - keyType: 0
+    keyAmount: 0
+  - keyType: 1
+    keyAmount: 0
+  - keyType: 2
+    keyAmount: 0
 --- !u!114 &7359484145119313668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodHit: {fileID: 0}
-  startDecreasing: 0
+  decayTime: 0.5
 --- !u!1 &7879401046929486198
 GameObject:
   m_ObjectHideFlags: 0
