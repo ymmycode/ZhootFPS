@@ -12,6 +12,7 @@ public class KeyPickup : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             FindObjectOfType<Key>().IncreaseKeyAmount(keyType, keyAmount);
+            FindObjectOfType<Key>().ShowKeyImage(keyType);
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,7 @@ public class Key : MonoBehaviour
     {
         public KeyType keyType;
         public int keyAmount;
+        public GameObject keyImage;
     }
 
     public int GetCurrentKeyAmount(KeyType keyType)
@@ -26,6 +27,18 @@ public class Key : MonoBehaviour
     public void IncreaseKeyAmount(KeyType keyType, int pickedKey)
     {
         GetKeyInventory(keyType).keyAmount += pickedKey;
+    }
+
+    public void ShowKeyImage(KeyType keyType)
+    {
+        if(GetKeyInventory(keyType).keyImage == null) return;
+        GetKeyInventory(keyType).keyImage.SetActive(true);
+    }
+
+    public void HideKeyImage(KeyType keyType)
+    {
+        if(GetKeyInventory(keyType).keyImage == null) return;
+        GetKeyInventory(keyType).keyImage.SetActive(false);
     }
 
     private KeyInventory GetKeyInventory(KeyType keyType)
