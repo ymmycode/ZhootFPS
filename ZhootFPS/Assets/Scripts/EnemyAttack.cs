@@ -18,5 +18,6 @@ public class EnemyAttack : MonoBehaviour
     {
         if (target == null) return;
         target.GetComponent<PlayerHealth>().TakePlayerHealth(damage);
+        target.GetComponent<DamageFeedback>().ShowBloodHit();
     }
 }

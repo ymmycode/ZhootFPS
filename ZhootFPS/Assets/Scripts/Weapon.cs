@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -14,10 +15,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject hitVFX;
     [SerializeField] Ammo ammoSlot; 
     [SerializeField] AmmoType ammoType;
+    [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] GameObject ammoStatusPlaceHolder;
     int weaponMag;
 
     void Update()
     {
+        ammoStatusPlaceHolder.SetActive(true);
+        DisplayAmmo();
         if(Input.GetButton("Fire1"))
         {
             if (Time.time - lastFired > 1 / fireRate )
@@ -26,6 +31,12 @@ public class Weapon : MonoBehaviour
                 Shoot();
             }
         }
+    }
+
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetCurentAmmoAmount(ammoType);
+        ammoText.text = currentAmmo.ToString();
     }
 
     private void Shoot()
@@ -39,6 +50,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
+            //play ui anim
             Debug.LogWarning("Empty Mag");
         }
     }
@@ -72,4 +84,16 @@ public class Weapon : MonoBehaviour
             Destroy(hitImpact, 0.5f);
         }
     }
+
+    private void OnEnable()
+    {
+        ammoStatusPlaceHolder.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        ammoStatusPlaceHolder.SetActive(false);
+    }
+
+    
 }
