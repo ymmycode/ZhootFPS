@@ -92,6 +92,7 @@ public class Weapon : MonoBehaviour
 
     private void OnDisable()
     {
+        if(ammoStatusPlaceHolder == null) return;
         ammoStatusPlaceHolder.SetActive(false);
     }
 

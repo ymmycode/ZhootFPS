@@ -19,9 +19,9 @@ public class Key : MonoBehaviour
         return GetKeyInventory(keyType).keyAmount;
     }
 
-    public void ReduceKeyAmount(KeyType keyType)
+    public void ReduceKeyAmount(KeyType keyType, int keyCost)
     {
-        GetKeyInventory(keyType).keyAmount--;
+        GetKeyInventory(keyType).keyAmount -= keyCost;
     }
 
     public void IncreaseKeyAmount(KeyType keyType, int pickedKey)
