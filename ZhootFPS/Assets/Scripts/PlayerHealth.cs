@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] float playerHealth = 100f;
-    [SerializeField] DamageFeedback damageFeedback;
+    [SerializeField] Canvas damageFeedback;
     [SerializeField] HealthBar healthBar;
 
     private void Start()

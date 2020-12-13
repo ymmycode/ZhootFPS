@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Weapon : MonoBehaviour
@@ -17,6 +18,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;
     [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] GameObject ammoStatusPlaceHolder;
+    [SerializeField] Image weaponIcon;
     int weaponMag;
 
     void Update()
@@ -88,12 +90,14 @@ public class Weapon : MonoBehaviour
     private void OnEnable()
     {
         ammoStatusPlaceHolder.SetActive(true);
+        weaponIcon.color = new Color(255, 255, 255, 255);
     }
 
     private void OnDisable()
     {
         if(ammoStatusPlaceHolder == null) return;
         ammoStatusPlaceHolder.SetActive(false);
+        weaponIcon.color = new Color(0, 0, 0, 255);
     }
 
     

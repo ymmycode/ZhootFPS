@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         DisableAbout();
+        Time.timeScale = 1;
     }
 
     public void SetActiveAbout()
